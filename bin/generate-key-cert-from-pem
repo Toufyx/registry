@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# Expect a letsencypt directory and create (domain.key, domain.crt) from pem files
+# sources: https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e
+# inspiration: https://community.letsencrypt.org/t/how-to-get-crt-and-key-files-from-i-just-have-pem-files/7348
+#
+
+cd $1
+cp privkey.pem domain.key
+cat cert.pem chain.pem > domain.crt
+chmod 777 domain.crt
+chmod 777 domain.key
+

@@ -1,0 +1,14 @@
+registry:
+  restart: always
+  image: registry:2
+  ports:
+    - 443:5000
+  environment:
+    REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+    REGISTRY_HTTP_TLS_KEY: /certs/domain.key
+    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
+  volumes:
+    - /containers/registry/conf:/etc/docker/registry
+    - /containers/registry/data:/var/lib/registry
+    - /containers/registry/auth:/auth:ro
+    - /etc/letsencrypt/live/${DOMAIN}:/certs:ro
