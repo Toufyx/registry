@@ -6,8 +6,10 @@ HOME_DIR=`dirname $SCRIPT_DIR`
 CONTAINER_DIR="/containers/registry"
 
 mkdir -p $CONTAINER_DIR/auth
+mkdir -p $CONTAINER_DIR/bin
 mkdir -p $CONTAINER_DIR/conf
 mkdir -p $CONTAINER_DIR/data
 
 cp $HOME_DIR/conf/* $CONTAINER_DIR/conf/
+cp $HOME_DIR/bin/* $CONTAINER_DIR/bin/
 cp $HOME_DIR/docker-compose.yml $CONTAINER_DIR/
