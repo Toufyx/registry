@@ -11,4 +11,3 @@ cp privkey.pem domain.key
 cat cert.pem chain.pem > domain.crt
 chmod 777 domain.crt
 chmod 777 domain.key
-

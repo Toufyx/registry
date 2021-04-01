@@ -1,6 +1,6 @@
 registry:
   restart: always
-  image: registry:2
+  image: registry:2.7.0
   ports:
     - 443:5000
   environment:
